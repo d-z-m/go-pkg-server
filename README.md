@@ -24,4 +24,7 @@ Because I am vain, and I want vanity imports :^).
 - drops privleges
   - takes flags `uid` and `gid` to enable dropping of priveleges after the priveleged bind on port 443 has occured
 
+## How to use
+
+change the associations in pkgs.txt, and also change the `hostname` constant in `main.go`, run go build and get those sweet vanity imports!
 
