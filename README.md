@@ -3,7 +3,8 @@
 
 ## What is it?
 
-Package server for golang.unexpl0.red
+Package server for golang.unexpl0.red.
+Inspired by: https://git.zx2c4.com/golang-package-server/about/
 
 
 Redirects here for now, because I'm scared of the Great Google Cannon(https://news.ycombinator.com/item?id=34310674)
