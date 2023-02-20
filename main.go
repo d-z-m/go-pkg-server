@@ -31,7 +31,7 @@ content="{{ .HostName }}/{{ .PackageName }} git {{ .URL }}">
 <meta name="go-source" content="{{ .HostName }}/{{ .PackageName }} _ {{ .URL }}{/dir} {{ .URL }}{/dir}/{file}#n{line}">
 </head>
 <body>
-go get golang.unexpl0.red/{{ .PackageName }}
+go get {{ .HostName }}/{{ .PackageName }}
 </body>
 </html>`
 
