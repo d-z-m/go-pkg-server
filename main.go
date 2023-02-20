@@ -27,7 +27,7 @@ const (
 const tplRaw = `<html>
 <head>
 <title>{{ .PackageName }}: dzm golang repo</title><meta name="go-import" 
-content="{{ .HostName }}/{{ .PackageName }} git https://{{ .HostName }}/{{ .PackageName }}">
+content="{{ .HostName }}/{{ .PackageName }} git {{ .URL }}">
 <meta name="go-source" content="{{ .HostName }}/{{ .PackageName }} _ {{ .URL }}{/dir} {{ .URL }}{/dir}/{file}#n{line}">
 </head>
 <body>
@@ -137,7 +137,9 @@ func main() {
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	// no need to sychronize access to this map, as it only is modified on init, all
 	// other access is read access
-	key := strings.TrimPrefix(r.URL.Path, "/")
+	log.Println("handling request for: " + r.URL.Path)
+	tokens := strings.Split(r.URL.Path, "/")
+	key := tokens[1]
 	value, exists := packageMap[key]
 	if !exists {
 		http.NotFound(w, r)
